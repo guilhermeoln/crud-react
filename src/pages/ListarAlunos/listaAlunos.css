@@ -1,0 +1,31 @@
+.container-lista{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+ul{
+    color: #212121;
+    padding: 20px;
+    font-weight: bold;
+    list-style: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 3px;
+}
+
+li{
+    margin-top: 20px;
+}
+
+ul button{
+    border: none;
+    background-color: #A51C30;
+    padding: 4px;
+    border-radius: 2px;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: 10px;
+}
