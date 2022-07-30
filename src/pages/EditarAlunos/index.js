@@ -55,9 +55,13 @@ function EditarAlunos(){
                     <h3>Nome</h3>
                     <input type='text' value={nome} onChange={(e) => setNome(e.target.value)}/>
                     <h3>Idade</h3>
-                    <input type='text' value={idade} onChange={(e) => setIdade(e.target.value)}/>
+                    <input type='number' min='8' value={idade} onChange={(e) => setIdade(e.target.value)}/>
                     <h3>Plano</h3>
-                    <input type='text' value={plano} onChange={(e) => setPlano(e.target.value)}/>
+                    <select value={plano} onChange={(e) => setPlano(e.target.value)}>
+                        <option>Anual</option>
+                        <option>Mensal</option>
+                        <option>Trimestral</option>
+                    </select>
                     <h3>Vencimento</h3>
                     <input type='text' value={vencimento} onChange={(e) => setVencimento(e.target.value)}/>
                     <button onClick={ editarInformacoes }>Editar</button>

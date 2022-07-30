@@ -44,7 +44,7 @@ function AdicionarAlunos(){
         value={idadeAluno}onChange={(e) => setIdadeAluno(e.target.value)}/>
         <h3>Plano</h3>
         <select value={plano} onChange={(e) => setPlano(e.target.value)}>
-            <option selected>Anual</option>
+            <option>Anual</option>
             <option>Mensal</option>
             <option>Trimestral</option>
         </select>
