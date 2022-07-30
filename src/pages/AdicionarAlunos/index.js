@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import firebase from '../../firebaseConnection';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import './addAlunos.css'
 
 
@@ -25,6 +26,7 @@ function AdicionarAlunos(){
             setNomeAluno('');
             setPlano('');
             setVencimento('');
+            <Link to='/'></Link>
         }).catch(() => toast.warn('Erro ao cadastrar o usuario!'))
     }
 
@@ -38,11 +40,16 @@ function AdicionarAlunos(){
         <h3>Nome</h3>
         <input type='text' placeholder="Digite o nome do aluno" value={nomeAluno} onChange={(e) => setNomeAluno(e.target.value)}/>
         <h3>Idade</h3>
-        <input type='text' placeholder="Digite a idade do aluno" value={idadeAluno}onChange={(e) => setIdadeAluno(e.target.value)}/>
+        <input type='number' min='8' placeholder="Digite a idade do aluno" 
+        value={idadeAluno}onChange={(e) => setIdadeAluno(e.target.value)}/>
         <h3>Plano</h3>
-        <input type='text' placeholder="Digite o plano do aluno" value={plano}onChange={(e) => setPlano(e.target.value)}/>
+        <select value={plano} onChange={(e) => setPlano(e.target.value)}>
+            <option selected>Anual</option>
+            <option>Mensal</option>
+            <option>Trimestral</option>
+        </select>
         <h3>Vencimento</h3>
-        <input type='text' placeholder="Digite o vencimento" value={vencimento}onChange={(e) => setVencimento(e.target.value)}/>
+        <input type='text' min='1' max=''placeholder="Digite o vencimento" value={vencimento}onChange={(e) => setVencimento(e.target.value)}/>
         <br/>
         <button onClick={ handleAdd }>Adicionar Aluno</button>
     </div>

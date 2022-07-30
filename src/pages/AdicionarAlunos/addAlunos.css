@@ -42,3 +42,9 @@
     color: #FFF;
     cursor: pointer;
 }
+
+select{
+    border: none;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+}
