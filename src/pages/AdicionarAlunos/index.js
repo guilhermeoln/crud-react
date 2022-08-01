@@ -1,7 +1,7 @@
 import React,{ useState } from "react";
 import firebase from '../../firebaseConnection';
 import { toast } from 'react-toastify';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FcHome } from "react-icons/fc";
 import './addAlunos.css'
 
