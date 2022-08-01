@@ -48,3 +48,14 @@ select{
     background-color: rgb(233, 233, 233);
     border-radius: 5px;
 }
+
+.container-add .btn-home{
+    margin-top: 20px;
+    background-color: #006494;
+}
+
+.icon-home{
+    margin-right: 5px;
+}
+
+

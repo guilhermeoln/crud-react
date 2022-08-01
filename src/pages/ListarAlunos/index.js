@@ -1,11 +1,13 @@
 import firebase from '../../firebaseConnection';
 import React, {useState, useEffect} from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import './listaAlunos.css'
 
 function ListarAlunos(){
 
     const [listaAlunos, setListaAlunos] = useState([]);
+    const navigate = useNavigate();
 
 
 
@@ -44,6 +46,7 @@ function ListarAlunos(){
         await firebase.firestore().collection('alunos').doc(id).delete()
         .then(() =>{
             toast.warn('Aluno Excluido com sucesso! ')
+            navigate('/', { replace: true})
         })
 
     }

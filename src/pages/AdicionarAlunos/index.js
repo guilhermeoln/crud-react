@@ -1,7 +1,8 @@
 import React,{ useState } from "react";
 import firebase from '../../firebaseConnection';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FcHome } from "react-icons/fc";
 import './addAlunos.css'
 
 
@@ -11,6 +12,8 @@ function AdicionarAlunos(){
     const [idadeAluno, setIdadeAluno] = useState('');
     const [vencimento, setVencimento] = useState('');
     const [plano, setPlano] = useState('');
+
+    const navigate = useNavigate();
 
 
     async function handleAdd(){
@@ -26,8 +29,12 @@ function AdicionarAlunos(){
             setNomeAluno('');
             setPlano('');
             setVencimento('');
-            <Link to='/'></Link>
+            navigate('/', { replace: true})
         }).catch(() => toast.warn('Erro ao cadastrar o usuario!'))
+    }
+
+    function goHome(){
+        navigate('/', { replace: true})
     }
 
 
@@ -52,6 +59,7 @@ function AdicionarAlunos(){
         <input type='text' min='1' max=''placeholder="Digite o vencimento" value={vencimento}onChange={(e) => setVencimento(e.target.value)}/>
         <br/>
         <button onClick={ handleAdd }>Adicionar Aluno</button>
+        <button onClick={ goHome } className='btn-home'><FcHome className="icon-home"/>Home</button>
     </div>
    );
 }
