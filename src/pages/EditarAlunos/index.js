@@ -28,6 +28,11 @@ function EditarAlunos(){
     }
 
     async function editarInformacoes(){
+
+        if(nome === '' || idade === '' || vencimento === ''){
+            return toast.warn('Preencha todos os campos!');
+        }
+
         await firebase.firestore().collection('alunos').doc(matricula)
         .update({
             nome: nome,

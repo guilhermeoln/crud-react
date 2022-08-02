@@ -17,6 +17,11 @@ function AdicionarAlunos(){
 
 
     async function handleAdd(){
+
+        if(nomeAluno === '' || idadeAluno === '' || vencimento === '' ){
+            return toast.warn('Preencha todos os campos!');
+        }
+
         await firebase.firestore().collection('alunos')
         .add({
             Vencimento: vencimento,
@@ -56,7 +61,8 @@ function AdicionarAlunos(){
             <option>Trimestral</option>
         </select>
         <h3>Vencimento</h3>
-        <input type='text' min='1' max=''placeholder="Digite o vencimento" value={vencimento}onChange={(e) => setVencimento(e.target.value)}/>
+        <input type='text' min='1' max=''placeholder="Digite o vencimento" value={vencimento} 
+        onChange={(e) => setVencimento(e.target.value)}/>
         <br/>
         <button onClick={ handleAdd }>Adicionar Aluno</button>
         <button onClick={ goHome } className='btn-home'><FcHome className="icon-home"/>Home</button>
